@@ -82,6 +82,7 @@ _models = {
 
 
 def get_model(name, **kwargs):
+    print (kwargs)
     name = name.lower()
     if name not in _models:
         err_str = '"%s" is not among the following model list:\n\t' % (name)
