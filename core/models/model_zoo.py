@@ -88,7 +88,7 @@ def get_model(name, **kwargs):
         err_str = '"%s" is not among the following model list:\n\t' % (name)
         err_str += '%s' % ('\n\t'.join(sorted(_models.keys())))
         raise ValueError(err_str)
-    net = _models[name](**kwargs)
+    net = _models[name](local_rank=0, **kwargs)
     return net
 
 
