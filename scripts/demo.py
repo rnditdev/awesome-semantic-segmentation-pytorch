@@ -41,7 +41,7 @@ def demo(config):
     image = Image.open(config.input_pic).convert('RGB')
     images = transform(image).unsqueeze(0).to(device)
 
-    model = get_model(args.model, pretrained=True, root=args.save_folder, local_rank=0).to(device)
+    model = get_model(args.model, pretrained=True, root=args.save_folder, {local_rank:0}).to(device)
     print('Finished loading model!')
 
     model.eval()
